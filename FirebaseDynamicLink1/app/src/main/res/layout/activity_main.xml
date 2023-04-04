@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이벤트 공유하러 가기" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="광고1 공유하러 가기" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="광고2 공유하러 가기" />
+
+</LinearLayout>
