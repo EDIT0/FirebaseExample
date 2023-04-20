@@ -80,4 +80,19 @@ class AD1Activity : AppCompatActivity() {
                 }
             }
     }
+
+    override fun onBackPressed() {
+        /**
+         * DeepLink 뒤로 가기 처리
+         */
+        Log.i("MYTAG", "isTaskRoot: $isTaskRoot")
+        if (isTaskRoot && javaClass != DeepLinkActivity::class.java
+            && javaClass != MainActivity::class.java) {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.data = getIntent().data
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
+        super.onBackPressed()
+    }
 }
