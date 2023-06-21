@@ -14,6 +14,15 @@ import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
+/**
+ * 기존 Legacy
+ * https://fcm.googleapis.com/fcm/send
+ * Authorization key=your_server_key
+ *
+ * Http v1
+ * https://fcm.googleapis.com/v1/projects/your_project_id/messages:send
+ * Bearer your_access_token
+ * */
 class FirebaseCloudMessagingService : FirebaseMessagingService() {
 
     private val TAG = FirebaseCloudMessagingService::class.java.simpleName
@@ -34,6 +43,8 @@ class FirebaseCloudMessagingService : FirebaseMessagingService() {
      * */
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
+
+        Log.i(TAG, "${message.data.isEmpty()}\n${message.data}\n${message.notification}")
 
         if(message.data.isEmpty()) {
             // Notification 알림
