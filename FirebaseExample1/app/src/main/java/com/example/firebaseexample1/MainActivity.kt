@@ -8,6 +8,7 @@ import com.example.firebaseexample1.databinding.ActivityMainBinding
 import com.example.firebaseexample1.dynamic_links.DynamicLinksHomeActivity
 import com.example.firebaseexample1.firestore.FireStoreHomeActivity
 import com.example.firebaseexample1.realtime_db.RealtimeHomeActivity
+import com.example.firebaseexample1.remote_config.RemoteConfigHomeActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnDeepLinks.setOnClickListener {
             startActivity(Intent(binding.root.context, DynamicLinksHomeActivity::class.java))
+        }
+
+        binding.btnRemoteConfig.setOnClickListener {
+            startActivity(Intent(binding.root.context, RemoteConfigHomeActivity::class.java))
         }
 
     }
